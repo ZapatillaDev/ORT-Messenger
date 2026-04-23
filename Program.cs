@@ -4,12 +4,15 @@ using System.Net.Sockets;
 using System.Text;
 using System;
 using Microsoft.VisualBasic;
+using System.Runtime.InteropServices;
+using System.Drawing;
+using System.Reflection.Metadata;
 
 namespace ORT_Messenger
 {
     internal class Program
     {
-        static string version = "0.5";
+        static string version = "0.6";
         static bool conectado = false;
         static string miIP;
         static int port;
@@ -69,12 +72,13 @@ namespace ORT_Messenger
 
 
             }
+            bool allowMessages = true;
+            int Color = 7;
             Console.WriteLine("Introducí la IP del destinatario");
             string ipServidor = Console.ReadLine();
             TcpClient client = new(ipServidor, port);
             Console.WriteLine("User:");
             string user = Console.ReadLine();
-
             Console.WriteLine("Escribí tu mensaje:");
 
             while (true)
@@ -84,13 +88,30 @@ namespace ORT_Messenger
                 if (antiBlank == "")
                 {
                     Console.WriteLine("No puedes mandar un mensaje vacio");
+                    allowMessages = false;
+                    Task.Delay(10);
+                    allowMessages= true;
+                    //Esto no anda hay que arreglarlo
                 }
                 if (msg == "/clear")
                 {
                     Console.Clear();
                     Console.WriteLine($"ORT Messenger v{version}\r\nTu IP es {miIP}");
                 }
-                else
+                if (msg[0] == '/' && msg[1] == 'C')
+                {
+                    //string[] colorList = msg.Split(' ');    
+                    //if (hola1[1] == "list")
+                    //{
+                    //    Console.WriteLine("");
+                    //}
+                    //int newColor = int.Parse(colorList[1]);
+                    //ConsoleColor color = ConsoleColor.DarkCyan;
+                    //ConsoleColor.colorList[1];
+                    
+                    
+                }
+                else if (allowMessages == true)
                 {
                     string mensaje = user + ": " + msg;
                     Console.SetCursorPosition(0, Console.CursorTop - 1);
@@ -150,7 +171,7 @@ namespace ORT_Messenger
                     string final67 = mensajeDesencriptado.Replace(userFinal[0], "");
                     final67 = final67.Replace(":", "");
                     Console.WriteLine(final67);
-
+                    Console.Beep();
                 }
             }
 
