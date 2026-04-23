@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORT_Messenger", "ORT_Messenger.csproj", "{BE98FFBF-EFA6-4CDA-98AC-A3F445EC2047}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE98FFBF-EFA6-4CDA-98AC-A3F445EC2047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE98FFBF-EFA6-4CDA-98AC-A3F445EC2047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE98FFBF-EFA6-4CDA-98AC-A3F445EC2047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE98FFBF-EFA6-4CDA-98AC-A3F445EC2047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {133E11E9-BA35-4D2D-BAA1-448C3AEE9A5A}
+	EndGlobalSection
+EndGlobal
